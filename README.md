@@ -1,7 +1,7 @@
 # Reinforcement-Learning-based-Prosthetic-Arm
 This project involves the development of an adaptive myoelectric prosthetic arm that uses reinforcement learning from human feedback (RLHF) to provide intelligent, personalized hand control. The system interprets electrical muscle signals (EMG) captured from the user’s forearm and converts them into hand actions. The innovation of this project lies in its dynamic learning capability. Initially, the model undergoes supervised pretraining using a labeled EMG dataset to learn the basic mapping between muscle activity and hand gestures. Once deployed, the prosthetic does not remain static—instead, it continuously adapts to the user through online reinforcement learning.
 
-Key Innovations:
+# Key Innovations:
 
 Two-phase hybrid learning: supervised pretraining to establish a stable baseline policy, followed by online actor–critic reinforcement learning for user-specific adaptation.
 
@@ -13,7 +13,7 @@ Design protection & dissemination: design patent granted; journal publication in
 
 
 
-Model Workflow:
+# Model Workflow:
 
 Supervised Pretraining:
 Actor–Critic model trained on labeled EMG dataset
@@ -28,7 +28,7 @@ Actor updated with reward-guided learning
 Critic adjusts value estimation
 Model continuously improves for that specific user
 
-Algorithms & Implementation:
+# Algorithms & Implementation:
 
 Model:
 Shared feedforward network → splits into:
@@ -48,12 +48,14 @@ actor_loss  = − log_prob(aₜ) × δₜ
 critic_loss = MSE(V(sₜ), rₜ + γ · V(sₜ₊₁))
 Total loss = actor_loss + critic_loss.
 
-Training Pipeline
+# Training Pipeline
 Supervised Pre-Training:
-Pretrain Epoch [1/50]  Loss: 1.6703  Acc: 0.4190  
-Pretrain Epoch [50/50] Loss: 0.0475  Acc: 0.9865  
+
+Pretrain Epoch [1/50] Accuracy: 0.4190  
+Pretrain Epoch [50/50] Accuracy: 0.9865  
 
 Online RL Adaptation:
-The Actor-Critic agent learns with interaction-based feedback:
-Online Epoch [1/50]  Loss: 0.1006  Accuracy: 0.9162  
-Online Epoch [50/50] Loss: 0.0414  Accuracy: 0.9734
+
+The Actor-Critic agent learns with interaction-based feedback
+Online Epoch [1/50]  Accuracy: 0.9162  
+Online Epoch [50/50]  Accuracy: 0.9734
