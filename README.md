@@ -56,6 +56,5 @@ Pretrain Epoch [50/50] Accuracy: 0.9865
 
 Online RL Adaptation:
 
-The Actor-Critic agent learns with interaction-based feedback
 Online Epoch [1/50]  Accuracy: 0.9162  
 Online Epoch [50/50]  Accuracy: 0.9734
